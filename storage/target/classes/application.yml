@@ -1,0 +1,20 @@
+server:
+  port: 8003
+spring:
+  profiles:
+    active: mapper
+  application:
+    name: storage-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    #配置seata分布式事务
+    alibaba:
+      seata:
+        tx-service-group: create_order_manage
+#配置seata分布式事务
+seata:
+  enabled: true
+  service:
+    grouplist: 127.0.0.1:8091

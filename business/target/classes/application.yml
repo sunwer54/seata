@@ -1,0 +1,18 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: business-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    #配置seata分布式事务
+    alibaba:
+      seata:
+        tx-service-group: create_order_manage
+#配置seata分布式事务
+seata:
+  enabled: true
+  service:
+    grouplist: 127.0.0.1:8091
